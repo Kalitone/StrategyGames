@@ -1,0 +1,405 @@
+0
+-1
+0
+1
+0
+0
+1
+1
+10
+10
+10
+10
+peg (1,5)    open (1,5)   closed (1,5) peg (1,6)    open (1,6)   closed (1,6) 
+peg (1,7)    open (1,7)   closed (1,7) peg (2,1)    open (2,1)   closed (2,1) 
+peg (2,2)    open (2,2)   closed (2,2) peg (2,3)    open (2,3)   closed (2,3) 
+peg (2,4)    open (2,4)   closed (2,4) peg (2,5)    open (2,5)   closed (2,5) 
+peg (2,6)    open (2,6)   closed (2,6) peg (2,7)    open (2,7)   closed (2,7) 
+open (3,1)   open (3,2)   open (3,3)   open (3,4)   open (3,5)   peg (3,7)    
+open (3,7)   closed (3,7) peg (4,1)    open (4,1)   closed (4,1) peg (4,2)    
+open (4,2)   closed (4,2) peg (4,3)    open (4,3)   closed (4,3) peg (4,4)    
+open (4,4)   closed (4,4) peg (4,5)    open (4,5)   closed (4,5) peg (4,6)    
+open (4,6)   closed (4,6) peg (4,7)    open (4,7)   closed (4,7) peg (5,1)    
+open (5,1)   closed (5,1) peg (5,2)    open (5,2)   closed (5,2) peg (5,3)    
+open (5,3)   closed (5,3) peg (5,4)    open (5,4)   closed (5,4) peg (5,5)    
+open (5,5)   closed (5,5) peg (5,6)    open (5,6)   closed (5,6) peg (5,7)    
+open (5,7)   closed (5,7) peg (6,1)    open (6,1)   closed (6,1) peg (6,2)    
+open (6,2)   closed (6,2) peg (6,3)    open (6,3)   closed (6,3) peg (6,4)    
+open (6,4)   closed (6,4) peg (6,5)    open (6,5)   closed (6,5) peg (6,6)    
+open (6,6)   closed (6,6) peg (6,7)    open (6,7)   closed (6,7) peg (7,1)    
+open (7,1)   closed (7,1) peg (7,2)    open (7,2)   closed (7,2) peg (7,3)    
+open (7,3)   closed (7,3) peg (7,4)    open (7,4)   closed (7,4) peg (7,5)    
+open (7,5)   closed (7,5) peg (7,6)    open (7,6)   closed (7,6) peg (7,7)    
+open (7,7)   closed (7,7) 
+10
+10
+peg (1,5)    open (1,5)   closed (1,5) peg (1,6)    open (1,6)   closed (1,6) 
+peg (1,7)    open (1,7)   closed (1,7) peg (2,1)    open (2,1)   closed (2,1) 
+peg (2,2)    open (2,2)   closed (2,2) peg (2,3)    open (2,3)   closed (2,3) 
+peg (2,4)    open (2,4)   closed (2,4) peg (2,5)    open (2,5)   closed (2,5) 
+peg (2,6)    open (2,6)   closed (2,6) peg (2,7)    open (2,7)   closed (2,7) 
+open (3,2)   open (3,3)   open (3,4)   open (3,5)   peg (3,7)    open (3,7)   
+closed (3,7) peg (4,1)    open (4,1)   closed (4,1) peg (4,2)    peg (4,3)    
+open (4,3)   closed (4,3) peg (4,4)    open (4,4)   closed (4,4) peg (4,5)    
+open (4,5)   closed (4,5) peg (4,6)    open (4,6)   closed (4,6) peg (4,7)    
+open (4,7)   closed (4,7) peg (5,1)    open (5,1)   closed (5,1) peg (5,2)    
+open (5,2)   closed (5,2) peg (5,3)    open (5,3)   closed (5,3) peg (5,4)    
+open (5,4)   closed (5,4) peg (5,5)    open (5,5)   closed (5,5) peg (5,6)    
+open (5,6)   closed (5,6) peg (5,7)    open (5,7)   closed (5,7) peg (6,1)    
+open (6,1)   closed (6,1) peg (6,2)    open (6,2)   closed (6,2) peg (6,3)    
+open (6,3)   closed (6,3) peg (6,4)    open (6,4)   closed (6,4) peg (6,5)    
+open (6,5)   closed (6,5) peg (6,6)    open (6,6)   closed (6,6) peg (6,7)    
+open (6,7)   closed (6,7) peg (7,1)    open (7,1)   closed (7,1) peg (7,2)    
+open (7,2)   closed (7,2) peg (7,3)    open (7,3)   closed (7,3) peg (7,4)    
+open (7,4)   closed (7,4) peg (7,5)    open (7,5)   closed (7,5) peg (7,6)    
+open (7,6)   closed (7,6) peg (7,7)    open (7,7)   closed (7,7) 
+10
+9
+10
+9
+9
+9
+10
+GGGGGG
+-g-g-g
+   1  2  3  4  5  6  7
+1  G  Yg G  -g .  .  . 
+2  .  Og Oy G  .  .  . 
+3  Og Y  Y  Y  Yg G  . 
+4  .  Oy .  .  .  Oy . 
+5  .  .  .  .  .  .  . 
+6  .  .  .  .  .  .  . 
+7  .  .  .  .  .  .  . 
+Oy-y-y-y-y
+YYYYY
+Yellow to play
+
+11
+2
+2
+11
+11
+peg (1,7)    closed (1,7) peg (2,1)    closed (2,1) peg (2,3)    peg (2,5)    
+closed (2,5) peg (2,6)    closed (2,6) peg (2,7)    closed (2,7) peg (3,7)    
+closed (3,7) peg (4,1)    closed (4,1) peg (4,2)    peg (4,3)    closed (4,3) 
+peg (4,4)    closed (4,4) peg (4,6)    peg (4,7)    closed (4,7) peg (5,1)    
+closed (5,1) peg (5,2)    closed (5,2) peg (5,3)    closed (5,3) peg (5,4)    
+closed (5,4) peg (5,5)    closed (5,5) peg (5,7)    closed (5,7) peg (6,1)    
+closed (6,1) peg (6,2)    closed (6,2) peg (6,3)    closed (6,3) peg (6,4)    
+closed (6,4) peg (6,5)    closed (6,5) peg (6,6)    closed (6,6) peg (7,1)    
+closed (7,1) peg (7,2)    closed (7,2) peg (7,3)    closed (7,3) peg (7,4)    
+closed (7,4) peg (7,5)    closed (7,5) peg (7,6)    closed (7,6) peg (7,7)    
+closed (7,7) 
+1
+open (1,1)   open (1,3)   peg (2,1)    open (2,1)   closed (2,1) peg (2,2)    
+open (2,4)   peg (2,5)    open (2,5)   closed (2,5) peg (2,6)    open (2,6)   
+closed (2,6) peg (2,7)    open (2,7)   closed (2,7) peg (3,1)    open (3,6)   
+peg (3,7)    open (3,7)   closed (3,7) peg (4,1)    open (4,1)   closed (4,1) 
+peg (4,3)    open (4,3)   closed (4,3) peg (4,4)    open (4,4)   closed (4,4) 
+peg (4,7)    open (4,7)   closed (4,7) peg (5,1)    open (5,1)   closed (5,1) 
+peg (5,2)    open (5,2)   closed (5,2) peg (5,3)    open (5,3)   closed (5,3) 
+peg (5,4)    open (5,4)   closed (5,4) peg (5,5)    open (5,5)   closed (5,5) 
+peg (5,7)    open (5,7)   closed (5,7) peg (6,1)    open (6,1)   closed (6,1) 
+peg (6,2)    open (6,2)   closed (6,2) peg (6,3)    open (6,3)   closed (6,3) 
+peg (6,4)    open (6,4)   closed (6,4) peg (6,5)    open (6,5)   closed (6,5) 
+peg (6,6)    open (6,6)   closed (6,6) peg (7,1)    open (7,1)   closed (7,1) 
+peg (7,2)    open (7,2)   closed (7,2) peg (7,3)    open (7,3)   closed (7,3) 
+peg (7,4)    open (7,4)   closed (7,4) peg (7,5)    open (7,5)   closed (7,5) 
+peg (7,6)    open (7,6)   closed (7,6) peg (7,7)    open (7,7)   closed (7,7) 
+
+1
+0
+0
+10
+0
+peg (1,5)             open (1,5) <- (1,2)   open (1,5) <- (3,1)   
+open (1,5) <- (3,5)   open (1,5) <- (5,6)   closed (1,5) <- (1,4) 
+closed (1,5) <- (1,6) closed (1,5) <- (1,7) closed (1,5) <- (6,5) 
+peg (2,1)             open (2,1) <- (1,2)   open (2,1) <- (3,1)   
+open (2,1) <- (3,5)   open (2,1) <- (5,6)   closed (2,1) <- (1,4) 
+closed (2,1) <- (1,6) closed (2,1) <- (1,7) closed (2,1) <- (6,5) 
+peg (2,2)             open (2,2) <- (1,2)   open (2,2) <- (3,1)   
+open (2,2) <- (3,5)   open (2,2) <- (5,6)   closed (2,2) <- (1,4) 
+closed (2,2) <- (1,6) closed (2,2) <- (1,7) closed (2,2) <- (6,5) 
+peg (2,3)             peg (2,5)             open (2,5) <- (1,2)   
+open (2,5) <- (3,1)   open (2,5) <- (3,5)   open (2,5) <- (5,6)   
+closed (2,5) <- (1,4) closed (2,5) <- (1,6) closed (2,5) <- (1,7) 
+closed (2,5) <- (6,5) peg (2,6)             open (2,6) <- (1,2)   
+open (2,6) <- (3,1)   open (2,6) <- (3,5)   open (2,6) <- (5,6)   
+closed (2,6) <- (1,4) closed (2,6) <- (1,6) closed (2,6) <- (1,7) 
+closed (2,6) <- (6,5) peg (2,7)             open (2,7) <- (1,2)   
+open (2,7) <- (3,1)   open (2,7) <- (3,5)   open (2,7) <- (5,6)   
+closed (2,7) <- (1,4) closed (2,7) <- (1,6) closed (2,7) <- (1,7) 
+closed (2,7) <- (6,5) open (3,2) <- (1,2)   open (3,2) <- (3,1)   
+open (3,2) <- (3,5)   open (3,2) <- (5,6)   open (3,3) <- (1,2)   
+open (3,3) <- (3,1)   open (3,3) <- (3,5)   open (3,3) <- (5,6)   
+open (3,4) <- (1,2)   open (3,4) <- (3,1)   open (3,4) <- (3,5)   
+open (3,4) <- (5,6)   peg (3,7)             open (3,7) <- (1,2)   
+open (3,7) <- (3,1)   open (3,7) <- (3,5)   open (3,7) <- (5,6)   
+closed (3,7) <- (1,4) closed (3,7) <- (1,6) closed (3,7) <- (1,7) 
+closed (3,7) <- (6,5) peg (4,1)             open (4,1) <- (1,2)   
+open (4,1) <- (3,1)   open (4,1) <- (3,5)   open (4,1) <- (5,6)   
+closed (4,1) <- (1,4) closed (4,1) <- (1,6) closed (4,1) <- (1,7) 
+closed (4,1) <- (6,5) peg (4,2)             peg (4,3)             
+open (4,3) <- (1,2)   open (4,3) <- (3,1)   open (4,3) <- (3,5)   
+open (4,3) <- (5,6)   closed (4,3) <- (1,4) closed (4,3) <- (1,6) 
+closed (4,3) <- (1,7) closed (4,3) <- (6,5) open (4,4) <- (1,2)   
+open (4,4) <- (3,1)   open (4,4) <- (3,5)   open (4,4) <- (5,6)   
+peg (4,5)             open (4,5) <- (1,2)   open (4,5) <- (3,1)   
+open (4,5) <- (3,5)   open (4,5) <- (5,6)   closed (4,5) <- (1,4) 
+closed (4,5) <- (1,6) closed (4,5) <- (1,7) closed (4,5) <- (6,5) 
+peg (4,6)             peg (4,7)             open (4,7) <- (1,2)   
+open (4,7) <- (3,1)   open (4,7) <- (3,5)   open (4,7) <- (5,6)   
+closed (4,7) <- (1,4) closed (4,7) <- (1,6) closed (4,7) <- (1,7) 
+closed (4,7) <- (6,5) peg (5,1)             open (5,1) <- (1,2)   
+open (5,1) <- (3,1)   open (5,1) <- (3,5)   open (5,1) <- (5,6)   
+closed (5,1) <- (1,4) closed (5,1) <- (1,6) closed (5,1) <- (1,7) 
+closed (5,1) <- (6,5) peg (5,2)             open (5,2) <- (1,2)   
+open (5,2) <- (3,1)   open (5,2) <- (3,5)   open (5,2) <- (5,6)   
+closed (5,2) <- (1,4) closed (5,2) <- (1,6) closed (5,2) <- (1,7) 
+closed (5,2) <- (6,5) peg (5,3)             open (5,3) <- (1,2)   
+open (5,3) <- (3,1)   open (5,3) <- (3,5)   open (5,3) <- (5,6)   
+closed (5,3) <- (1,4) closed (5,3) <- (1,6) closed (5,3) <- (1,7) 
+closed (5,3) <- (6,5) peg (5,4)             open (5,4) <- (1,2)   
+open (5,4) <- (3,1)   open (5,4) <- (3,5)   open (5,4) <- (5,6)   
+closed (5,4) <- (1,4) closed (5,4) <- (1,6) closed (5,4) <- (1,7) 
+closed (5,4) <- (6,5) open (5,5) <- (1,2)   open (5,5) <- (3,1)   
+open (5,5) <- (3,5)   open (5,5) <- (5,6)   peg (5,7)             
+open (5,7) <- (1,2)   open (5,7) <- (3,1)   open (5,7) <- (3,5)   
+open (5,7) <- (5,6)   closed (5,7) <- (1,4) closed (5,7) <- (1,6) 
+closed (5,7) <- (1,7) closed (5,7) <- (6,5) peg (6,1)             
+open (6,1) <- (1,2)   open (6,1) <- (3,1)   open (6,1) <- (3,5)   
+open (6,1) <- (5,6)   closed (6,1) <- (1,4) closed (6,1) <- (1,6) 
+closed (6,1) <- (1,7) closed (6,1) <- (6,5) peg (6,2)             
+open (6,2) <- (1,2)   open (6,2) <- (3,1)   open (6,2) <- (3,5)   
+open (6,2) <- (5,6)   closed (6,2) <- (1,4) closed (6,2) <- (1,6) 
+closed (6,2) <- (1,7) closed (6,2) <- (6,5) peg (6,3)             
+open (6,3) <- (1,2)   open (6,3) <- (3,1)   open (6,3) <- (3,5)   
+open (6,3) <- (5,6)   closed (6,3) <- (1,4) closed (6,3) <- (1,6) 
+closed (6,3) <- (1,7) closed (6,3) <- (6,5) peg (6,4)             
+open (6,4) <- (1,2)   open (6,4) <- (3,1)   open (6,4) <- (3,5)   
+open (6,4) <- (5,6)   closed (6,4) <- (1,4) closed (6,4) <- (1,6) 
+closed (6,4) <- (1,7) closed (6,4) <- (6,5) peg (6,6)             
+open (6,6) <- (1,2)   open (6,6) <- (3,1)   open (6,6) <- (3,5)   
+open (6,6) <- (5,6)   closed (6,6) <- (1,4) closed (6,6) <- (1,6) 
+closed (6,6) <- (1,7) closed (6,6) <- (6,5) open (6,7) <- (1,2)   
+open (6,7) <- (3,1)   open (6,7) <- (3,5)   open (6,7) <- (5,6)   
+peg (7,1)             open (7,1) <- (1,2)   open (7,1) <- (3,1)   
+open (7,1) <- (3,5)   open (7,1) <- (5,6)   closed (7,1) <- (1,4) 
+closed (7,1) <- (1,6) closed (7,1) <- (1,7) closed (7,1) <- (6,5) 
+peg (7,2)             open (7,2) <- (1,2)   open (7,2) <- (3,1)   
+open (7,2) <- (3,5)   open (7,2) <- (5,6)   closed (7,2) <- (1,4) 
+closed (7,2) <- (1,6) closed (7,2) <- (1,7) closed (7,2) <- (6,5) 
+peg (7,3)             open (7,3) <- (1,2)   open (7,3) <- (3,1)   
+open (7,3) <- (3,5)   open (7,3) <- (5,6)   closed (7,3) <- (1,4) 
+closed (7,3) <- (1,6) closed (7,3) <- (1,7) closed (7,3) <- (6,5) 
+peg (7,4)             open (7,4) <- (1,2)   open (7,4) <- (3,1)   
+open (7,4) <- (3,5)   open (7,4) <- (5,6)   closed (7,4) <- (1,4) 
+closed (7,4) <- (1,6) closed (7,4) <- (1,7) closed (7,4) <- (6,5) 
+peg (7,5)             open (7,5) <- (1,2)   open (7,5) <- (3,1)   
+open (7,5) <- (3,5)   open (7,5) <- (5,6)   closed (7,5) <- (1,4) 
+closed (7,5) <- (1,6) closed (7,5) <- (1,7) closed (7,5) <- (6,5) 
+peg (7,6)             open (7,6) <- (1,2)   open (7,6) <- (3,1)   
+open (7,6) <- (3,5)   open (7,6) <- (5,6)   closed (7,6) <- (1,4) 
+closed (7,6) <- (1,6) closed (7,6) <- (1,7) closed (7,6) <- (6,5) 
+peg (7,7)             open (7,7) <- (1,2)   open (7,7) <- (3,1)   
+open (7,7) <- (3,5)   open (7,7) <- (5,6)   closed (7,7) <- (1,4) 
+closed (7,7) <- (1,6) closed (7,7) <- (1,7) closed (7,7) <- (6,5) 
+
+GGGGGGGGGG
+OgOgOgOg-g-g-g-g
+   1  2  3  4  5  6  7
+1  .  .  .  .  .  .  . 
+2  .  .  .  .  .  .  . 
+3  .  .  .  .  .  .  . 
+4  .  .  .  .  .  .  . 
+5  .  .  .  .  .  .  . 
+6  .  .  .  .  .  .  . 
+7  .  .  .  .  .  .  . 
+OyOyOyOy-y-y-y-y
+YYYYYYYYYY
+Green to play
+
+0
+
+
+   1  2  3  4  5  6  7
+1  -y Y  .  .  G  .  -y
+2  G  .  .  .  G  .  . 
+3  Y  .  Oy .  Og .  -g
+4  -y .  Yg Oy .  Gy G 
+5  -g .  G  Y  .  .  -y
+6  Gy G  G  .  .  Y  -g
+7  G  -g .  .  Y  Yg Og
+
+YYY
+Draw
+
+0
+GGGGGGG
+Og-g-g
+   1  2  3  4  5  6  7
+1  Og .  .  .  .  .  . 
+2  .  -y Y  .  .  .  . 
+3  -g .  .  .  .  .  . 
+4  -y .  .  Og .  .  . 
+5  .  G  Oy .  .  .  . 
+6  .  .  .  .  .  Oy -g
+7  G  .  Oy -y -y Og G 
+Oy
+YYYYYYYYY
+Green to play
+
+-1
+
+
+   1  2  3  4  5  6  7
+1  Og .  .  .  Y  .  G 
+2  .  .  .  .  Y  -g Oy
+3  -y .  .  G  -y .  . 
+4  Yg G  G  Y  .  .  . 
+5  G  .  G  G  -g -g G 
+6  .  .  Oy Og Og .  . 
+7  .  -y -g Oy -y Gy G 
+
+YYYYYY
+Yellow to play
+
+1
+
+
+   1  2  3  4  5  6  7
+1  Og .  Y  G  .  -g -y
+2  .  Oy -y Og G  -y G 
+3  Oy -g -g Y  G  .  Y 
+4  .  .  .  .  Og Yg . 
+5  G  G  .  .  G  .  -y
+6  G  G  .  .  .  .  Y 
+7  -g .  Oy Oy .  Y  G 
+
+YYYY
+Yellow to play
+
+13
+
+
+   1  2  3  4  5  6  7
+1  G  Gy Oy .  .  G  -g
+2  .  Y  -y -y .  -g G 
+3  .  Y  .  Yg Y  Og . 
+4  Og Y  .  .  Y  G  . 
+5  .  G  G  G  -y Y  -g
+6  Y  -g G  Oy .  Y  Gy
+7  .  .  .  -y Yg .  . 
+
+
+Yellow to play
+
+-10
+G
+
+   1  2  3  4  5  6  7
+1  Oy G  -g Y  Oy .  . 
+2  -y -y Yg Y  .  .  . 
+3  -y G  Y  .  Y  Og Yg
+4  Y  Oy .  .  G  .  . 
+5  Yg G  G  Gy .  Y  -g
+6  G  .  G  .  -g .  Y 
+7  .  -g -y .  .  .  G 
+
+
+Green to play
+
+0
+peg (1,1)             open (1,1) <- (1,5)   open (1,1) <- (3,3)   
+open (1,1) <- (5,7)   open (1,1) <- (7,7)   closed (1,1) <- (3,6) 
+closed (1,1) <- (5,4) closed (1,1) <- (6,3) closed (1,1) <- (6,5) 
+peg (1,2)             open (1,2) <- (1,5)   open (1,2) <- (3,3)   
+open (1,2) <- (5,7)   open (1,2) <- (7,7)   closed (1,2) <- (3,6) 
+closed (1,2) <- (5,4) closed (1,2) <- (6,3) closed (1,2) <- (6,5) 
+peg (1,3)             open (1,3) <- (1,5)   open (1,3) <- (3,3)   
+open (1,3) <- (5,7)   open (1,3) <- (7,7)   closed (1,3) <- (3,6) 
+closed (1,3) <- (5,4) closed (1,3) <- (6,3) closed (1,3) <- (6,5) 
+peg (1,4)             open (1,4) <- (1,5)   open (1,4) <- (3,3)   
+open (1,4) <- (5,7)   open (1,4) <- (7,7)   closed (1,4) <- (3,6) 
+closed (1,4) <- (5,4) closed (1,4) <- (6,3) closed (1,4) <- (6,5) 
+peg (1,6)             open (1,6) <- (1,5)   open (1,6) <- (3,3)   
+open (1,6) <- (5,7)   open (1,6) <- (7,7)   closed (1,6) <- (3,6) 
+closed (1,6) <- (5,4) closed (1,6) <- (6,3) closed (1,6) <- (6,5) 
+peg (1,7)             open (1,7) <- (1,5)   open (1,7) <- (3,3)   
+open (1,7) <- (5,7)   open (1,7) <- (7,7)   closed (1,7) <- (3,6) 
+closed (1,7) <- (5,4) closed (1,7) <- (6,3) closed (1,7) <- (6,5) 
+peg (2,1)             open (2,1) <- (1,5)   open (2,1) <- (3,3)   
+open (2,1) <- (5,7)   open (2,1) <- (7,7)   closed (2,1) <- (3,6) 
+closed (2,1) <- (5,4) closed (2,1) <- (6,3) closed (2,1) <- (6,5) 
+peg (2,2)             open (2,2) <- (1,5)   open (2,2) <- (3,3)   
+open (2,2) <- (5,7)   open (2,2) <- (7,7)   closed (2,2) <- (3,6) 
+closed (2,2) <- (5,4) closed (2,2) <- (6,3) closed (2,2) <- (6,5) 
+peg (2,4)             open (2,4) <- (1,5)   open (2,4) <- (3,3)   
+open (2,4) <- (5,7)   open (2,4) <- (7,7)   closed (2,4) <- (3,6) 
+closed (2,4) <- (5,4) closed (2,4) <- (6,3) closed (2,4) <- (6,5) 
+peg (2,5)             open (2,5) <- (1,5)   open (2,5) <- (3,3)   
+open (2,5) <- (5,7)   open (2,5) <- (7,7)   closed (2,5) <- (3,6) 
+closed (2,5) <- (5,4) closed (2,5) <- (6,3) closed (2,5) <- (6,5) 
+peg (2,6)             open (2,6) <- (1,5)   open (2,6) <- (3,3)   
+open (2,6) <- (5,7)   open (2,6) <- (7,7)   closed (2,6) <- (3,6) 
+closed (2,6) <- (5,4) closed (2,6) <- (6,3) closed (2,6) <- (6,5) 
+peg (3,1)             peg (3,2)             open (3,2) <- (1,5)   
+open (3,2) <- (3,3)   open (3,2) <- (5,7)   open (3,2) <- (7,7)   
+closed (3,2) <- (3,6) closed (3,2) <- (5,4) closed (3,2) <- (6,3) 
+closed (3,2) <- (6,5) peg (3,4)             open (3,4) <- (1,5)   
+open (3,4) <- (3,3)   open (3,4) <- (5,7)   open (3,4) <- (7,7)   
+closed (3,4) <- (3,6) closed (3,4) <- (5,4) closed (3,4) <- (6,3) 
+closed (3,4) <- (6,5) open (3,5) <- (1,5)   open (3,5) <- (3,3)   
+open (3,5) <- (5,7)   open (3,5) <- (7,7)   peg (3,7)             
+open (3,7) <- (1,5)   open (3,7) <- (3,3)   open (3,7) <- (5,7)   
+open (3,7) <- (7,7)   closed (3,7) <- (3,6) closed (3,7) <- (5,4) 
+closed (3,7) <- (6,3) closed (3,7) <- (6,5) open (4,1) <- (1,5)   
+open (4,1) <- (3,3)   open (4,1) <- (5,7)   open (4,1) <- (7,7)   
+peg (4,4)             open (5,2) <- (1,5)   open (5,2) <- (3,3)   
+open (5,2) <- (5,7)   open (5,2) <- (7,7)   peg (5,3)             
+peg (5,6)             open (5,6) <- (1,5)   open (5,6) <- (3,3)   
+open (5,6) <- (5,7)   open (5,6) <- (7,7)   closed (5,6) <- (3,6) 
+closed (5,6) <- (5,4) closed (5,6) <- (6,3) closed (5,6) <- (6,5) 
+peg (6,1)             open (6,1) <- (1,5)   open (6,1) <- (3,3)   
+open (6,1) <- (5,7)   open (6,1) <- (7,7)   closed (6,1) <- (3,6) 
+closed (6,1) <- (5,4) closed (6,1) <- (6,3) closed (6,1) <- (6,5) 
+peg (6,2)             open (6,2) <- (1,5)   open (6,2) <- (3,3)   
+open (6,2) <- (5,7)   open (6,2) <- (7,7)   closed (6,2) <- (3,6) 
+closed (6,2) <- (5,4) closed (6,2) <- (6,3) closed (6,2) <- (6,5) 
+peg (6,4)             open (6,4) <- (1,5)   open (6,4) <- (3,3)   
+open (6,4) <- (5,7)   open (6,4) <- (7,7)   closed (6,4) <- (3,6) 
+closed (6,4) <- (5,4) closed (6,4) <- (6,3) closed (6,4) <- (6,5) 
+open (6,6) <- (1,5)   open (6,6) <- (3,3)   open (6,6) <- (5,7)   
+open (6,6) <- (7,7)   peg (7,1)             open (7,1) <- (1,5)   
+open (7,1) <- (3,3)   open (7,1) <- (5,7)   open (7,1) <- (7,7)   
+closed (7,1) <- (3,6) closed (7,1) <- (5,4) closed (7,1) <- (6,3) 
+closed (7,1) <- (6,5) open (7,2) <- (1,5)   open (7,2) <- (3,3)   
+open (7,2) <- (5,7)   open (7,2) <- (7,7)   open (7,3) <- (1,5)   
+open (7,3) <- (3,3)   open (7,3) <- (5,7)   open (7,3) <- (7,7)   
+peg (7,4)             open (7,4) <- (1,5)   open (7,4) <- (3,3)   
+open (7,4) <- (5,7)   open (7,4) <- (7,7)   closed (7,4) <- (3,6) 
+closed (7,4) <- (5,4) closed (7,4) <- (6,3) closed (7,4) <- (6,5) 
+peg (7,5)             open (7,5) <- (1,5)   open (7,5) <- (3,3)   
+open (7,5) <- (5,7)   open (7,5) <- (7,7)   closed (7,5) <- (3,6) 
+closed (7,5) <- (5,4) closed (7,5) <- (6,3) closed (7,5) <- (6,5) 
+peg (7,6)             open (7,6) <- (1,5)   open (7,6) <- (3,3)   
+open (7,6) <- (5,7)   open (7,6) <- (7,7)   closed (7,6) <- (3,6) 
+closed (7,6) <- (5,4) closed (7,6) <- (6,3) closed (7,6) <- (6,5) 
+
+GGGG
+
+   1  2  3  4  5  6  7
+1  .  .  .  .  Og .  . 
+2  .  .  Gy .  .  .  -y
+3  Oy .  Og .  Y  -g . 
+4  Y  G  G  Oy -y G  -y
+5  G  Y  Oy -g G  .  Og
+6  .  .  -g .  -g Y  -y
+7  .  Y  Y  .  .  .  Og
+
+YYYY
+Green to play
+
+1
+1
