@@ -7,7 +7,6 @@ import java.util.List;
 
 import edu.principia.OODesign.StrategyGames.Board;
 
-
 public class peg5Board implements Board {
    public static final int BOARD_SIZE = 7;
    public static final int PLAYER_0 = 1;
@@ -46,14 +45,14 @@ public class peg5Board implements Board {
    // Factory method to create a new move
    @Override
    public Board.Move createMove() {
-      return new peg5Move();
+       return new peg5Move(peg5Move.PieceType.PEG, 0, 0); // Provide a default PieceType and coordinates
    }
 
    // Apply a move to the board, throwing an exception if the move is invalid
    @Override
    public void applyMove(Board.Move move) throws InvalidMoveException {
       peg5Move peg5Move = (peg5Move) move;
-      // System.out.println("DEBUG: Applying move: " + peg5Move);
+      System.out.println("DEBUG: Applying move: " + peg5Move);
 
       int row = peg5Move.getRow();
       int col = peg5Move.getCol();
@@ -107,7 +106,6 @@ public class peg5Board implements Board {
             yellowUnplayedPieces[2]--;
          }
       }
-
       if (peg5Move.isRepositioningMove()) {
          int sourceRow = peg5Move.getSourceRow();
          int sourceCol = peg5Move.getSourceCol();
@@ -116,23 +114,42 @@ public class peg5Board implements Board {
          if (player == PLAYER_0) {
             if (peg5Move.getPieceType() == peg5Move.PieceType.PEG) {
                sourceCell.removeGreenPeg();
+               greenUnplayedPieces[0]--; // Decrement the count of unplayed pieces
             } else if (peg5Move.getPieceType() == peg5Move.PieceType.OPEN_TUBE) {
                sourceCell.removeGreenOpenTube();
+               greenUnplayedPieces[1]--; // Decrement the count of unplayed pieces
             } else if (peg5Move.getPieceType() == peg5Move.PieceType.CLOSED_TUBE) {
                sourceCell.removeGreenClosedTube();
+               greenUnplayedPieces[2]--; // Decrement the count of unplayed pieces
             }
          } else {
             if (peg5Move.getPieceType() == peg5Move.PieceType.PEG) {
                sourceCell.removeYellowPeg();
+               yellowUnplayedPieces[0]--; // Decrement the count of unplayed pieces
             } else if (peg5Move.getPieceType() == peg5Move.PieceType.OPEN_TUBE) {
                sourceCell.removeYellowOpenTube();
+               yellowUnplayedPieces[1]--; // Decrement the count of unplayed pieces
             } else if (peg5Move.getPieceType() == peg5Move.PieceType.CLOSED_TUBE) {
                sourceCell.removeYellowClosedTube();
+               yellowUnplayedPieces[2]--; // Decrement the count of unplayed pieces
             }
          }
       }
+      System.out.println("DEBUG: Move history after beofr new move:");
 
-      moveHistory.add(peg5Move.clone());
+      for (peg5Move moveh : moveHistory) {
+         System.out.println(moveh);
+     }
+      peg5Move newMove = peg5Move.clone();
+
+      System.out.println("DEBUG: New move created: " + newMove);
+
+
+      moveHistory.add(newMove);
+      System.out.println("DEBUG: Move history after adding new move:");
+      for (peg5Move moveh : moveHistory) {
+          System.out.println(moveh);
+      }
       player = -player;
       moveCount++;
    }
@@ -296,7 +313,7 @@ public class peg5Board implements Board {
       // int threevalue = count3Pattern();
       int value = count4Pattern();
 
-      //System.out.println("we are debugging 4 pattern");
+      // System.out.println("we are debugging 4 pattern");
 
       return value;
    }
@@ -306,76 +323,105 @@ public class peg5Board implements Board {
       int countyellow = 0;
       int count3green = 0;
       int count3yellow = 0;
-      System.out.println("count for green");
-      System.out.println(" ");
 
-      countgreen += calc4Horizontal(PLAYER_0, horizantals, winningPattGreen); // horizontal
-     // System.out.println("horizontal:" + countgreen);
-      countgreen += calc4Horizontal(PLAYER_0, verticals, winningPattGreen); // verticals
-      //System.out.println("verts: " + countgreen);
+      countgreen += calc4vertical(PLAYER_0, horizantals, winningPattGreen); //
+      // horizontal
+      // System.out.println("horizontal:" + countgreen);
+      countgreen += calc4vertical(PLAYER_0, verticals, winningPattGreen); //
+      // verticals
+      // System.out.println("verts: " + countgreen);
 
-      countgreen += calc4Diagonal(PLAYER_0, diagonals, winningPattGreen);// diagonals
-     // System.out.println("diagonal: " + countgreen);
+      countgreen += calc4vertical(PLAYER_0, diagonals, winningPattGreen);//
+      // diagonals
+      // System.out.println("diagonal: " + countgreen);
 
-      countgreen += calc4Diagonal(PLAYER_0, antiDiagonals, winningPattGreen); // antidiagonal
-      //System.out.println("antidiagonal: " + countgreen);
+      countgreen += calc4vertical(PLAYER_0, antiDiagonals, winningPattGreen); //
+      // antidiagonal
+      // System.out.println("green4cell count: " + countgreen);
 
+      countyellow += calc4vertical(PLAYER_1, horizantals, winningPattYellow);//
+      // horizontals
+      countyellow += calc4vertical(PLAYER_1, verticals, winningPattYellow);//
+      // vericals
+      countyellow += calc4vertical(PLAYER_1, diagonals, winningPattYellow);//
+      // diagonals
+      countyellow += calc4vertical(PLAYER_1, antiDiagonals, winningPattYellow); //
+      // System.out.println("yellow4cell count: " + countgreen);
 
-      //countyellow += calc4Horizontal(PLAYER_1, horizantals, winningPattYellow);// horizontals
-      //countyellow += calc4Horizontal(PLAYER_1, verticals, winningPattYellow);// vericals
-      //countyellow += calc4Diagonal(PLAYER_1, diagonals, winningPattYellow);// diagonals
-      //countyellow += calc4Diagonal(PLAYER_1, antiDiagonals, winningPattYellow); // antidiagonal
-     // System.out.println("count for yellow");
-      //System.out.println(" ");
+      // antidiagonal
+      // System.out.println("count for yellow");
+      // System.out.println(" ");
 
-      //System.out.println("horizontal: " + countyellow);
+      // System.out.println("horizontal: " + countyellow);
 
-     // System.out.println("verts: " + countyellow);
+      // System.out.println("verts: " + countyellow);
 
-   //   System.out.println("diagonal: " + countyellow);
+      // System.out.println("diagonal: " + countyellow);
 
-      //System.out.println("antidiagonal: " + countyellow);
+      // System.out.println("antidiagonal: " + countyellow);
 
+      // int count3greenhor= calcHorizontal(PLAYER_0, horizantals, winningPattGreen);
+      // //horizontals
+      // int count3greenver = calcHorizontal(PLAYER_0, verticals, winningPattGreen);
+      // //vericals
+      // int count3greendia = calcvertical(PLAYER_0, diagonals, winningPattGreen);
+      // //diagonals
+      // int count3greenanti = calcDiagonal(PLAYER_0, antiDiagonals,
+      // winningPattGreen); //antidiagonal
 
-      
-     // count3green += calcHorizontal(PLAYER_0, horizantals, winningPattGreen);// horizontals
-      //count3green += calcHorizontal(PLAYER_0, verticals, winningPattGreen);// vericals
-      //count3green += calcDiagonal(PLAYER_0, diagonals, winningPattGreen);// diagonals
-      //count3green += calcDiagonal(PLAYER_0, antiDiagonals, winningPattGreen); // antidiagonal
-     /// System.out.println("count for 3green");
-     // System.out.println(" ");
+      // System.out.println("horizontal: " + count3greenhor);
 
- //     System.out.println("horizontal: " + count3green);
+      // System.out.println("verts: " + count3greenver);
 
-//      System.out.println("verts:  " + count3green);
+      // System.out.println("diagonal: " + count3greendia);
 
-  //    System.out.println("diagonal: " + count3green);
+      // System.out.println("antidiagonal: " + count3greenanti);
 
-    //  System.out.println("antidiagonal: " + count3green);
+      // int count3yellowhoritz = calcHorizontal(PLAYER_1, horizantals,
+      // winningPattYellow);// horizontals
+      // int count3yellowvert = calcvertical(PLAYER_1, verticals,
+      // winningPattYellow);// vericals
+      count3yellow += calcvertical(PLAYER_1, diagonals, winningPattYellow);// diagonals
+      count3green += calcvertical(PLAYER_0, diagonals, winningPattGreen);// diagonals
 
-      int count3yellowhoritz = calcHorizontal(PLAYER_1, horizantals, winningPattYellow);// horizontals
-     int count3yellowvert = calcvertical(PLAYER_1, verticals, winningPattYellow);// vericals
-      int count3yellowdiag = calcDiagonal(PLAYER_1, diagonals, winningPattYellow);// diagonals
-      int count3yellowdanti = calcantiDiagonal(PLAYER_1, antiDiagonals, winningPattYellow); // antidiagonal
-      //System.out.println("count for 3yellow");
-      System.out.println(" ");
+      count3yellow += calcvertical(PLAYER_1, verticals, winningPattYellow);// verticals
+      count3green += calcvertical(PLAYER_0, verticals, winningPattGreen);// verticals
 
-      System.out.println("horizontal:  " + count3yellowhoritz);
+      count3yellow += calcvertical(PLAYER_1, horizantals, winningPattYellow);// horizontals
+      count3green += calcvertical(PLAYER_0, horizantals, winningPattGreen);// horizontals
 
-      System.out.println("verts:  " + count3yellowvert);
+      count3yellow += calcvertical(PLAYER_1, antiDiagonals, winningPattYellow);// antidiagonals
+      count3green += calcvertical(PLAYER_0, antiDiagonals, winningPattGreen);// antidiagonals
 
-      System.out.println("diagonal:  " + count3yellowdiag);
+      // System.out.println("count for 3yellow" + count3yellow);
+      // System.out.println("count for 3green" + count3green);
 
-      System.out.println("antidiagonal: " + count3yellowdanti);
+      // int count3yellowdanti = calcantiDiagonal(PLAYER_1, antiDiagonals,
+      // winningPattYellow); // antidiagonal
+      // System.out.println("count for 3yellow");
+      // System.out.println(" ");
 
+      // System.out.println("horizontal: " + count3greenhor);
+
+      // System.out.println("verts: " + count3greenver);
+
+      // System.out.println("diagonal: " + count3greendia);
+
+      // System.out.println("antidiagonal: " + count3greenanti);
+
+      // System.out.println("horizontal: " + count3yellowhoritz);
+
+      // System.out.println("verts: " + count3yellowvert);
+
+      // System.out.println("diagonal: " + count3yellowdiag);
+      // System.out.println("diagonal: " + count3greendiag);
+
+      // System.out.println("antidiagonal: " + count3yellowdanti);
 
       int finaly = count3yellow + countyellow;
       int finalg = count3green + countgreen;
 
-
-
-
-
+      System.out.println("green: " + finalg + " yellow: " + finaly);
 
       return finalg - finaly;
 
@@ -385,75 +431,20 @@ public class peg5Board implements Board {
       int countgreen = 0;
       int countyellow = 0;
 
-
-      //System.out.println("debug: " + (countgreen));
-      //System.out.println("debug: " + (countyellow));
+      // System.out.println("debug: " + (countgreen));
+      // System.out.println("debug: " + (countyellow));
 
       return countgreen - countyellow;
 
    }
 
-   public int calc4Diagonal(int player, int[][] diag, List<byte[]> winningPattern) {
+   public int calc4vertical(int player, int[][] horiz, List<byte[]> winningPattern) {
       int maxCount = 0;
 
       for (byte[] pattern : winningPattern) {
          // iterate over the first idx of horiz
-         //System.out.println("here we are checking what pattern we have" + Arrays.toString(pattern));
-
-         for (int i = 0; i < diag.length; i += 1) {
-            // use j and j+1 to get row and col from the second array in horiz
-            int pcellcount = 0;
-            ArrayList<peg5Cell> cellcontents = new ArrayList<>(); // Use peg5Cell objects
-            for (int j = 0; j < 10; j += 2) {
-               int row = diag[i][j];
-               int col = diag[i][j + 1];
-               // 0 based idx
-               //System.out.println("row" + row + "col" + col);
-
-               peg5Cell cell = board[row][col];
-               // get contnts of the cell and verify the piece and adds if it belongs to the
-               // player
-               if (cell.hasPiece(player)) {
-                  cellcontents.add(cell);
-                  pcellcount++;
-               }
-               // still add the contents since we need the pattern still
-               else {
-                  cellcontents.add(cell);
-               }
-            }
-           // System.out.println("here are the cellcontents after each iteration" + cellcontents);
-            //System.out.println("size of cellcontents" + cellcontents.size());
-            //System.out.println("curent pcellcount" + pcellcount);
-            if (pcellcount == 4) {
-               int patternmatch = 0;
-               for (int idx = 0; idx < cellcontents.size(); idx++) {
-                  if ((pattern[idx] & cellcontents.get(idx).getContents()) != 0) {
-                    // System.out.println("current bit pattern we are checking" + pattern[idx]);
-                     //System.out.println("cellcontents.get(idx).getContents()");
-                     patternmatch += 1;
-                  }
-               }
-               //System.out.println("number of pattern matches" + patternmatch);
-               if (patternmatch == 4) {
-                  maxCount += 1;
-               }
-               //System.out.println("maxcount" + maxCount);
-
-            }
-         }
-      }
-      // multiply by 10 to add 4 cell value
-      return maxCount * 10;
-
-   }
-
-   public int calc4Horizontal(int player, int[][] horiz, List<byte[]> winningPattern) {
-      int maxCount = 0;
-
-      for (byte[] pattern : winningPattern) {
-         // iterate over the first idx of horiz
-         //System.out.println("here we are checking what pattern we have" + Arrays.toString(pattern));
+         // System.out.println("winning pattern we are checking what pattern we have: " +
+         // Arrays.toString(pattern));
 
          for (int i = 0; i < horiz.length; i += 1) {
             // use j and j+1 to get row and col from the second array in horiz
@@ -463,210 +454,75 @@ public class peg5Board implements Board {
                int row = horiz[i][j];
                int col = horiz[i][j + 1];
                // 0 based idx
-              // System.out.println("row" + row + "col" + col);
+               // System.out.println("row" + row + "col" + col);
 
                peg5Cell cell = board[row][col];
                // get contnts of the cell and verify the piece and adds if it belongs to the
                // player
+               // System.out.println("before checking pplayer " + cell.getContents());
                if (cell.hasPiece(player)) {
+                  // if (player == PLAYER_0 && cell.hasGreenPeg()) {
+
+                  // }
                   cellcontents.add(cell);
                   pcellcount++;
+                  // if (row == 2 && col == 4) {
+                  // System.out.println("here is the cell we are checking" + cell.getContents());
+                  // System.out.println("cpcellcount" + pcellcount);
+                  // System.out.println("cel contents" + cellcontents);
+                  // }
+
                }
                // still add the contents since we need the pattern still
                else {
+                  // if (row == 2 && col == 4)
+                  // System.out.println("hyhtbynyn " + cell.getContents());
                   cellcontents.add(cell);
                }
             }
-            //System.out.println("here are the cellcontents after each iteration" + cellcontents);
-          //  System.out.println("size of cellcontents" + cellcontents.size());
-           // System.out.println("curent pcellcount" + pcellcount);
+            // System.out.println("here are the cellcontents after each iteration" +
+            // cellcontents);
+            // System.out.println("size of cellcontents" + cellcontents.size());
+            // System.out.println("curent pcellcount" + pcellcount);
             if (pcellcount == 4) {
                int patternmatch = 0;
+               int emptycell = 0;
+               int pegpos = player == PLAYER_0 ? 1 : 16;
+               int openpos = player == PLAYER_0 ? 2 : 32;
+               int closedpos = player == PLAYER_0 ? 4 : 64;
+
                for (int idx = 0; idx < cellcontents.size(); idx++) {
+                  // if cell contnets doesnt match with the pattern cell in idx pattern check if
+                  // that cell pattern is empty
+                  // and you can play on it dont increment matchcount increment playble count
+                  // if
+                  // int patt = pattern[idx] == pegpos
                   if ((pattern[idx] & cellcontents.get(idx).getContents()) != 0) {
-                     //System.out.println("current bit pattern we are checking" + pattern[idx]);
-                    // System.out.println("cellcontents.get(idx).getContents()");
+                     /// System.out.println("current bit pattern we are checking: " + pattern[idx]);
+                     // System.out.println(cellcontents.get(idx).getContents());
                      patternmatch += 1;
                   }
+                  if ((pattern[idx] & cellcontents.get(idx).getContents()) == 0
+                        && cellcontents.get(idx).getContents() == 0) {
+                     emptycell += 1;
+                  } else if ((pattern[idx] == pegpos) && cellcontents.get(idx).canPlacePeg(player) ||
+                        (pattern[idx] == openpos) && cellcontents.get(idx).canPlaceTube(player) ||
+                        (pattern[idx] == closedpos) && cellcontents.get(idx).getContents() == 0) {
+                     emptycell += 1;
+
+                  }
+
                }
-               //System.out.println("number of pattern matches" + patternmatch);
-               if (patternmatch == 4) {
+               // System.out.println("number of pattern matches" + patternmatch);
+               if (patternmatch == 4 && emptycell == 1) {
                   maxCount += 1;
                }
-               //System.out.println("maxcount" + maxCount);
+               // System.out.println("maxcount" + maxCount);
 
             }
          }
       }
-      // multiply by 10 to add 4 cell value
       return maxCount * 10;
-
-   }
-
-   public int calcDiagonal(int player, int[][] diag, List<byte[]> winningPattern) {
-      int maxCount = 0;
-
-      for (byte[] pattern : winningPattern) {
-         // iterate over the first idx of horiz
-         // System.out.println("here we are checking what pattern we have" +
-         // Arrays.toString(pattern));
-
-         for (int i = 0; i < diag.length; i += 1) {
-            // use j and j+1 to get row and col from the second array in horiz
-            int pcellcount = 0;
-            ArrayList<peg5Cell> cellcontents = new ArrayList<>(); // Use peg5Cell objects
-            for (int j = 0; j < 10; j += 2) {
-               int row = diag[i][j];
-               int col = diag[i][j + 1];
-               // 0 based idx
-               // System.out.println("row" + row + "col" + col);
-
-               peg5Cell cell = board[row][col];
-               // get contnts of the cell and verify the piece and adds if it belongs to the
-               // player
-               if (cell.hasPiece(player)) {
-                  cellcontents.add(cell);
-                  pcellcount++;
-               }
-               // still add the contents since we need the pattern still
-               else {
-                  cellcontents.add(cell);
-               }
-            }
-            // System.out.println("here are the cellcontents after each iteration" +
-            // cellcontents);
-            // System.out.println("size of cellcontents" + cellcontents.size());
-            // System.out.println("curent pcellcount" + pcellcount);
-            if (pcellcount == 3) {
-               int patternmatch = 0;
-               for (int idx = 0; idx < cellcontents.size(); idx++) {
-                  if ((pattern[idx] & cellcontents.get(idx).getContents()) != 0) {
-                     // System.out.println("current bit pattern we are checking" + pattern[idx]);
-                     // System.out.println("cellcontents.get(idx).getContents()");
-                     patternmatch += 1;
-                  }
-               }
-               // System.out.println("number of pattern matches" + patternmatch);
-               if (patternmatch == 3) {
-                  maxCount += 1;
-               }
-               // System.out.println("maxcount" + maxCount);
-
-            }
-         }
-      }
-      return maxCount;
-
-   }
-   public int calcantiDiagonal(int player, int[][] diag, List<byte[]> winningPattern) {
-      int maxCount = 0;
-
-      for (byte[] pattern : winningPattern) {
-         // iterate over the first idx of horiz
-         // System.out.println("here we are checking what pattern we have" +
-         // Arrays.toString(pattern));
-
-         for (int i = 0; i < diag.length; i += 1) {
-            // use j and j+1 to get row and col from the second array in horiz
-            int pcellcount = 0;
-            ArrayList<peg5Cell> cellcontents = new ArrayList<>(); // Use peg5Cell objects
-            for (int j = 0; j < 10; j += 2) {
-               int row = diag[i][j];
-               int col = diag[i][j + 1];
-               // 0 based idx
-               // System.out.println("row" + row + "col" + col);
-
-               peg5Cell cell = board[row][col];
-               // get contnts of the cell and verify the piece and adds if it belongs to the
-               // player
-               if (cell.hasPiece(player)) {
-                  cellcontents.add(cell);
-                  pcellcount++;
-               }
-               // still add the contents since we need the pattern still
-               else {
-                  cellcontents.add(cell);
-               }
-            }
-            // System.out.println("here are the cellcontents after each iteration" +
-            // cellcontents);
-            // System.out.println("size of cellcontents" + cellcontents.size());
-            // System.out.println("curent pcellcount" + pcellcount);
-            if (pcellcount == 3) {
-               int patternmatch = 0;
-               for (int idx = 0; idx < cellcontents.size(); idx++) {
-                  if ((pattern[idx] & cellcontents.get(idx).getContents()) != 0) {
-                     // System.out.println("current bit pattern we are checking" + pattern[idx]);
-                     // System.out.println("cellcontents.get(idx).getContents()");
-                     patternmatch += 1;
-                  }
-               }
-               // System.out.println("number of pattern matches" + patternmatch);
-               if (patternmatch == 3) {
-                  maxCount += 1;
-               }
-               // System.out.println("maxcount" + maxCount);
-
-            }
-         }
-      }
-      return maxCount;
-
-   }
-
-
-   public int calcHorizontal(int player, int[][] horiz, List<byte[]> winningPattern) {
-      int maxCount = 0;
-
-      for (byte[] pattern : winningPattern) {
-         // iterate over the first idx of horiz
-         System.out.println("here we are checking what pattern we have: " + Arrays.toString(pattern));
-
-         for (int i = 0; i < horiz.length; i += 1) {
-            // use j and j+1 to get row and col from the second array in horiz
-            int pcellcount = 0;
-            ArrayList<peg5Cell> cellcontents = new ArrayList<>(); // Use peg5Cell objects
-            for (int j = 0; j < 10; j += 2) {
-               int row = horiz[i][j];
-               int col = horiz[i][j + 1];
-               // 0 based idx
-              // System.out.println("row" + row + "col" + col);
-
-               peg5Cell cell = board[row][col];
-               // get contnts of the cell and verify the piece and adds if it belongs to the
-               // player
-               if (cell.hasPiece(player)) {
-                  cellcontents.add(cell);
-                  pcellcount++;
-               }
-               // still add the contents since we need the pattern still
-               else {
-                  cellcontents.add(cell);
-               }
-            }
-             System.out.println("here are the cellcontents after each iteration" +
-            cellcontents);
-             //System.out.println("size of cellcontents" + cellcontents.size());
-             System.out.println("curent pcellcount" + pcellcount);
-            if (pcellcount == 3) {
-               int patternmatch = 0;
-               for (int idx = 0; idx < cellcontents.size(); idx++) {
-                  if ((pattern[idx] & cellcontents.get(idx).getContents()) != 0) {
-                     System.out.println("current bit pattern we are checking:  " + pattern[idx]);
-                      System.out.println(cellcontents.get(idx).getContents());
-                     patternmatch += 1;
-                  }
-               }
-               System.out.println("number of pattern matches" + patternmatch);
-               if (patternmatch == 3) {
-                  maxCount += 1;
-               }
-               //System.out.println("maxcount" + maxCount);
-
-            }
-         }
-      }
-      return maxCount;
 
    }
 
@@ -675,7 +531,8 @@ public class peg5Board implements Board {
 
       for (byte[] pattern : winningPattern) {
          // iterate over the first idx of horiz
-         System.out.println("here we are checking what pattern we have: " + Arrays.toString(pattern));
+         // System.out.println("winning pattern we are checking what pattern we have: " +
+         // Arrays.toString(pattern));
 
          for (int i = 0; i < horiz.length; i += 1) {
             // use j and j+1 to get row and col from the second array in horiz
@@ -685,38 +542,70 @@ public class peg5Board implements Board {
                int row = horiz[i][j];
                int col = horiz[i][j + 1];
                // 0 based idx
-              // System.out.println("row" + row + "col" + col);
+               // System.out.println("row" + row + "col" + col);
 
                peg5Cell cell = board[row][col];
                // get contnts of the cell and verify the piece and adds if it belongs to the
                // player
+               /// System.out.println("before checking pplayer " + cell.getContents());
                if (cell.hasPiece(player)) {
+                  // if (player == PLAYER_0 && cell.hasGreenPeg()) {
+
+                  // }
                   cellcontents.add(cell);
                   pcellcount++;
+                  // if (row == 2 && col == 4) {
+                  // System.out.println("here is the cell we are checking" + cell.getContents());
+                  // System.out.println("cpcellcount" + pcellcount);
+                  // System.out.println("cel contents" + cellcontents);
+                  // }
+
                }
                // still add the contents since we need the pattern still
                else {
+                  // if (row == 2 && col == 4)
+                  // System.out.println("hyhtbynyn " + cell.getContents());
                   cellcontents.add(cell);
                }
             }
-             System.out.println("here are the cellcontents after each iteration" +
-            cellcontents);
-             //System.out.println("size of cellcontents" + cellcontents.size());
-             System.out.println("curent pcellcount" + pcellcount);
+            // System.out.println("here are the cellcontents after each iteration" +
+            // cellcontents);
+            // System.out.println("size of cellcontents" + cellcontents.size());
+            // System.out.println("curent pcellcount" + pcellcount);
             if (pcellcount == 3) {
                int patternmatch = 0;
+               int emptycell = 0;
+               int pegpos = player == PLAYER_0 ? 1 : 16;
+               int openpos = player == PLAYER_0 ? 2 : 32;
+               int closedpos = player == PLAYER_0 ? 4 : 64;
+
                for (int idx = 0; idx < cellcontents.size(); idx++) {
+                  // if cell contnets doesnt match with the pattern cell in idx pattern check if
+                  // that cell pattern is empty
+                  // and you can play on it dont increment matchcount increment playble count
+                  // if
+                  // int patt = pattern[idx] == pegpos
                   if ((pattern[idx] & cellcontents.get(idx).getContents()) != 0) {
-                     System.out.println("current bit pattern we are checking:  " + pattern[idx]);
-                      System.out.println(cellcontents.get(idx).getContents());
+                     // System.out.println("current bit pattern we are checking: " + pattern[idx]);
+                     // System.out.println(cellcontents.get(idx).getContents());
                      patternmatch += 1;
                   }
+                  if ((pattern[idx] & cellcontents.get(idx).getContents()) == 0
+                        && cellcontents.get(idx).getContents() == 0) {
+                     emptycell += 1;
+                  } else if ((pattern[idx] == pegpos) && cellcontents.get(idx).canPlacePeg(player) ||
+                        (pattern[idx] == openpos) && cellcontents.get(idx).canPlaceTube(player) ||
+                        (pattern[idx] == closedpos) && cellcontents.get(idx).getContents() == 0) {
+                     emptycell += 1;
+
+                  }
+
                }
-               System.out.println("number of pattern matches" + patternmatch);
-               if (patternmatch == 3) {
+               /// System.out.println("number of pattern matches" + patternmatch);
+               if (patternmatch == 3 && emptycell == 2) {
                   maxCount += 1;
                }
-               //System.out.println("maxcount" + maxCount);
+               // System.out.println("maxcount" + maxCount);
 
             }
          }
@@ -898,6 +787,7 @@ public class peg5Board implements Board {
          int row = lastMove.getRow();
          int col = lastMove.getCol();
          peg5Cell cell = board[row][col];
+         System.out.println("Undoing move: " + lastMove); // Debugging statement
 
          if (lastMove.getPieceType() == peg5Move.PieceType.PEG) {
             if (player == PLAYER_0) {
@@ -948,6 +838,8 @@ public class peg5Board implements Board {
                }
             }
          }
+         System.out.println("Board state after undoing move:"); // Debugging statement
+         System.out.println(this.toString()); // Print the current state of the board
       }
    }
 

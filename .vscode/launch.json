@@ -20,6 +20,7 @@
       },
       {
          "type": "java",
+   
          "name": "BoardTest",
          "request": "launch",
          "mainClass": "edu.principia.OODesign.StrategyGames.BoardTest",

@@ -43,7 +43,6 @@ showVal
 doMove open (3,5)
 showVal
 showBoard
-
 doMove peg (4,5)
 showVal
 doMove closed (1,5)
@@ -60,39 +59,40 @@ showVal
 showMoves
 doMove peg (4,4)
 showVal
-doMove open (5, 6) <- (2, 2)
+doMove open (5,6) <- (2,2)
 showVal
 doMove peg (5,5)
 showVal
-doMove closed (6, 5) <- (1,5)
+doMove closed (6,5) <- (1,5)
 showVal
 doMove peg (3,1) <- (4,5)
 showVal
+
 showMoves
 undoMoves 100
 showBoard
-showVal
+
 testRun 1 100
 showBoard
-showVal
+
 testRun 1 200
 showBoard
-showVal
+
 testRun 1 400
 showBoard
-showVal
+
 testRun 1 800
 showBoard
-showVal
+
 testRun 1 1600
 showBoard
-showVal
+
 testRun 1 3200
 showBoard
-showVal
+
 testRun 1 40000
 showMoves
 showBoard
-showVal
+
 showPlayer
 quit
